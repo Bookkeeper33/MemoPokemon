@@ -1,0 +1,33 @@
+header,
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    gap: 1em;
+    align-items: center;
+    padding: 1em;
+    line-height: 1.5;
+    letter-spacing: 0.2em;
+}
+
+.score {
+    border: thick double white;
+    border-radius: 12px;
+    -webkit-box-shadow: 1px 4px 13px 3px rgba(0, 0, 0, 0.45);
+    box-shadow: 1px 4px 13px 3px rgba(0, 0, 0, 0.45);
+    padding: 0.7em 1em;
+    gap: 0.5em;
+    font-size: 1.2em;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.title > h1 {
+    font-size: 2rem;
+}
