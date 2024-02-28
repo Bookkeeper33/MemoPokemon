@@ -1,22 +1,21 @@
 export default async function fetchPokemons() {
     const LIMIT = 12;
     const POKEMON_AMOUNT = 700;
-    const promises = [];
 
     try {
-        for (let i = 0; i < LIMIT; i++) {
-            const randomID = Math.floor(Math.random() * POKEMON_AMOUNT) + 1;
-            const promise = fetchPokemon(randomID);
+        const pokemons = [];
 
-            promises.push(promise);
+        while (pokemons.length < LIMIT) {
+            const randomID = Math.floor(Math.random() * POKEMON_AMOUNT + 1);
+            const pokemon = await fetchPokemon(randomID);
+
+            if (!pokemons.some((p) => p.id === pokemon.id)) {
+                pokemons.push(pokemon);
+            }
         }
-
-        const pokemonList = await Promise.all(promises);
-
-        return pokemonList;
-    } catch (error) {
-        console.error("Error fetching pokemons:", error);
-        throw error;
+        return pokemons;
+    } catch (err) {
+        console.error(err);
     }
 }
 
