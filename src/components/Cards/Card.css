@@ -1,0 +1,18 @@
+.card {
+    font-family: inherit;
+    background-color: #c0edc3c9;
+    color: #363b81;
+    border: none;
+    border-radius: 5px;
+    height: 250px;
+    width: 180px;
+    cursor: pointer;
+}
+
+.card-image {
+    height: 200px;
+    object-fit: contain;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 100%;
+}
