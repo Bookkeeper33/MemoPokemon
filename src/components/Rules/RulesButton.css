@@ -1,0 +1,21 @@
+.game-rules {
+    margin: 2em;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 2em;
+    -webkit-box-shadow: 1px 4px 13px 3px rgba(0, 0, 0, 0.45);
+    box-shadow: 1px 4px 13px 3px rgba(0, 0, 0, 0.45);
+    background-color: rgb(249, 75, 63);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.game-rules:hover {
+    transform: scale(1.1);
+    filter: brightness(90%);
+}
+
+.game-rules:active {
+    transform: scale(0.95);
+}
