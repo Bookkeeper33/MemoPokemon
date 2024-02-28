@@ -1,0 +1,57 @@
+dialog {
+    border: thick double rgb(34, 32, 32);
+    border-radius: 5px;
+    background-color: rgb(228, 245, 145);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1.6rem;
+    min-width: 400px;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(0.2rem);
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.modal-container > button {
+    align-self: flex-end;
+    padding: 0.7em 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 99, 43);
+    font-family: inherit;
+    font-size: 1em;
+    transition: transform 0.2s ease-in-out, background-color 0.3s linear;
+    cursor: pointer;
+}
+
+.modal-container > button:hover {
+    background-color: rgb(255, 68, 0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header > button {
+    border: none;
+    background-color: inherit;
+    font-size: 1.3rem;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.modal-content > ul {
+    display: flex;
+    gap: 0.8em;
+}
+
+button:active {
+    transform: scale(0.95);
+}

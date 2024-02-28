@@ -1,0 +1,45 @@
+.modal {
+    border: thick double rgb(34, 32, 32);
+    border-radius: 5px;
+    background-color: rgb(228, 245, 145);
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 1.6rem;
+    max-width: 400px;
+}
+
+.modal::backdrop {
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.modal-content img {
+    border: none;
+    border-radius: 5px;
+    min-width: 360px;
+}
+
+.modal-button {
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    background-color: rgb(255, 65, 65);
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s linear;
+}
+
+.modal-button:hover {
+    background-color: rgb(255, 111, 50);
+}
+.modal-button:active {
+    transform: scale(0.97);
+}
