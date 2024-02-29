@@ -1,15 +1,16 @@
 export default async function fetchPokemons() {
     const LIMIT = 12;
     const POKEMON_AMOUNT = 700;
+    const pokemons = [];
+    const uniquePokemonsID = new Set();
 
     try {
-        const pokemons = [];
-
-        while (pokemons.length < LIMIT) {
+        while (uniquePokemonsID.size < LIMIT) {
             const randomID = Math.floor(Math.random() * POKEMON_AMOUNT + 1);
-            const pokemon = await fetchPokemon(randomID);
 
-            if (!pokemons.some((p) => p.id === pokemon.id)) {
+            if (!uniquePokemonsID.has(randomID)) {
+                const pokemon = await fetchPokemon(randomID);
+                uniquePokemonsID.add(randomID);
                 pokemons.push(pokemon);
             }
         }
@@ -24,6 +25,11 @@ async function fetchPokemon(randomID) {
         const res = await fetch(
             `https://pokeapi.co/api/v2/pokemon/${randomID}`
         );
+
+        if (!res.ok) {
+            throw new Error("Failed to fetch Pokemons");
+        }
+
         const {
             name,
             sprites: { front_default },
