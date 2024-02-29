@@ -10,15 +10,7 @@ function Card({ pokemon, isFlipped, onClick }) {
     const nodeRef = useRef(null);
 
     return (
-        <Tilt
-            tiltReverse={true}
-            tiltMaxAngleX={10}
-            tiltMaxAngleY={10}
-            glareEnable={true}
-            glareMaxOpacity={0.3}
-            glareColor="#e57070"
-            glarePosition="all"
-        >
+        <Tilt tiltReverse={true} tiltMaxAngleX={10} tiltMaxAngleY={10}>
             <div className="flippable-card-container">
                 <CSSTransition
                     in={isFlipped}
