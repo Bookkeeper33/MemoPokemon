@@ -2,7 +2,7 @@
 
 # Project:Memory Game (MemoPokemon)
 
-Memory Card Game is a fun game to test your memory skills while immersing you in the world of pokemons.
+MemoPokemon is a fun simple game to test your memory skills while immersing you in the world of pokemons.
 
 ### [Live Demo](https://memo-pokemon.vercel.app/) :ramen:
 
