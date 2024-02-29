@@ -13,6 +13,7 @@ function GameBoard({ score, bestScore, setScore, setBestScore }) {
     const [isFetchingPokemons, setIsFetchingPokemons] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isGameWon, setIsGameWon] = useState(false);
+    const [isFlipped, setIsFlipped] = useState(true);
 
     useEffect(() => {
         let ignore = false;
@@ -42,8 +43,13 @@ function GameBoard({ score, bestScore, setScore, setBestScore }) {
 
     const startNextRound = () => {
         const shuffledPokemonList = shuffle(pokemonList);
+        setIsFlipped(false);
 
-        setPokemonList(shuffledPokemonList);
+        setTimeout(() => {
+            setIsFlipped(true);
+            setPokemonList(shuffledPokemonList);
+        }, 2000);
+        
         updateScore();
     };
 
@@ -108,6 +114,7 @@ function GameBoard({ score, bestScore, setScore, setBestScore }) {
             ) : (
                 <>
                     <CardsContainer
+                        isFlipped={isFlipped}
                         pokemons={pokemonList}
                         handleClick={handleCardClick}
                     />

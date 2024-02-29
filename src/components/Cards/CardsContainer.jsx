@@ -1,7 +1,7 @@
 import Card from "./Card";
 import "./CardsContainer.css";
 
-export default function CardsContainer({ pokemons, handleClick }) {
+export default function CardsContainer({ pokemons, isFlipped, handleClick }) {
     return (
         <main>
             <div className="container">
@@ -10,6 +10,7 @@ export default function CardsContainer({ pokemons, handleClick }) {
                         <Card
                             key={pokemon.id}
                             pokemon={pokemon}
+                            isFlipped={isFlipped}
                             onClick={() => handleClick(pokemon.id)}
                         />
                     ))}
